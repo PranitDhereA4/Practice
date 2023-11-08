@@ -10,10 +10,18 @@ pipeline {
             }
         }
     }
-    
+    stages {
+        stage('Trigger') {
+            steps {
+                sh 'echo "Jenkins build triggered by MS Teams webhook"'
+            }
+        }
+    }
     post {
         always {
             echo 'Hello World!'
         }
     }
+
+    
 }
